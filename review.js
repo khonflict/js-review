@@ -116,7 +116,7 @@ console.log(pizzaSentence.slice(7));
 console.log(pizzaSentence.slice(0,5));
 
 // Okay, but who decided to go to this expensive restaurant? Yaz, Poornima, and Leshawn decided to split() the bill. Return an array separating Yaz, Poornima, and Leshawn.
-// !!!!!!!!!!!!!!!!!!!!!!!!! 
+ 
 const splitTheBill = "Yaz, Poornima, and Leshawn";
 // console.log(splitTheBill);
 // let newSplit = splitTheBill.replace('and ', '');
@@ -124,13 +124,14 @@ const splitTheBill = "Yaz, Poornima, and Leshawn";
 const newSplit = splitTheBill.split();
 console.log(newSplit)
 
-// !!!!!!!!!!!!!!!!!!!!!!!!!
+
 // OH NO! The alien invaders from earlier were so against bill splitting so they decided to split() Yaz, Poornima, and Leshawn into pieces. Using splitTheBill, return an array separating all three by characters.
 const chars = splitTheBill.split('')
 console.log(chars[''])
 
 // Use this toLowerCase()
 const angry = "LOWER YOUR VOICE DOWN IF YOU AIN'T PAYING MY BILLS."
+
 // Tuan was angry today. Create a string with words that Tuan would yell out. Now lowercase it, to tell Tuan to chill out. 
 const angryTuan = "STOP ALL THE DRAMA!";
 console.log(angryTuan.toLowerCase());
@@ -227,7 +228,7 @@ const tia = ['teo', 'the', 'syntax', 'of', 'this', 'is', 'cleaner']
 for(const element of tia){
   console.log(element)
 }
-// !!!!!!!!!!!!!!!!!!!!
+ 
 // Look into forEach() loop, it accepts a callback aka a function inside a function. 
 // Swathi said don't forget each person. No person left behind! Use forEach() to iterate over the array perscholas. Inside the function, create a variable with the string "PS". Print their name in the console concatenated with the variable. 
 const perscholas = ['Amira', 'Arely', 'Jonathan']
@@ -375,8 +376,10 @@ const donutShop =[
 ]
 
 // Anthony wants applecrumble. Print please!
-console.log('Here\'s your + donutShop[1][0][1] + 'DocumentFragment, Anthoney. That\11)
+console.log('Here\'s the last ' + donutShop[1][0][1] + ' , Anthony!')
+
 // Tosi wants ihatethis. :) Print!
+console.log(donutShop[2][0][0][1][0] + ' for Tosi!')
 
 // =================================================
 //                     IF/ELSE
@@ -384,24 +387,34 @@ console.log('Here\'s your + donutShop[1][0][1] + 'DocumentFragment, Anthoney. Th
 
 // Teo is a person. I would hope so...
 // Check if Teo is a person. If true, print 'Teo is a person!' if not then print 'Teo is not a person!'
-const teo = "person";
-if (teo === "person") {
-  console.log("teo is a person")
+const teo = 'person';
+if (teo === 'person') {
+  console.log('Teo is a person!');
   
 }else {
-  console.log("Teo is not a person!")
+  console.log('Teo is not a person!');
 }
 // If Teo is a person, check to see if he is a male or a female. If male, print 'You got it right!' if not then print 'Wrong. Teo is going to remove you from the class.'.
-const gender = "male";
-if (gender === "male") {
-  console.log("You got it right!");
+const gender = 'male';
+if (gender === 'male') {
+  console.log('You got it right!');
 }else {
-  console.log("Wrong")
+  console.log('Wrong. Teo is going to remove you from the class.')
 }
 
 // If male, check to see if Teo is hungry. If Teo is 'hungry' then print 'Let's buy Teo some tacos!'. If Teo is 'not hungry' then print 'He doesn't need to eat.'. Anything else, print 'If Teo is not hungry, am I hungry?'
+const stomach = 'hungry';
+if (stomach === 'hungry') {
+  console.log('Let\'s buy Teo some tacos!');
+} else if (stomach === 'not hungry') {
+  console.log('He doesn\'t need to eat.');  
+} else {
+  console.log('If Teo is not hungry, am I hungry?');
+}
 
 // Create a if/else ternary to check if Gustavo is the coolest. If coolest, print 'You got that right!', else print 'James wants to argue. He says he's the best!'
+let coolest = 'Gustavo'
+console.log(coolest === 'Gustavo' ? 'You got that right!' : 'James wants to argue. He says he\'s the best!')
 
 // =================================================
 //                     FUNCTIONS
@@ -410,10 +423,25 @@ if (gender === "male") {
 // Don't forget to call your functions :)
 
 // Create a function called sayGreeting and PRINT 'Hello, ma'amsir!'
+function sayGreeting() {
+  console.log('Hello, ma\'amsir!')
+} 
+sayGreeting()
+
 
 // Create a function that takes a string as a parameter. PRINT 'This is my (STRING)'. Please replace the (STRING) with the parameter. Don't play with me haha.
+const string = 'favorite time of the year. Flowers are in bloom!'
+function saying() {
+  console.log(`This is my ${string}.`)
+}
+saying()
 
 // Create a function called add that takes in three number parameters. Create 3 variables and assign numerical values to them. Invoke your add() and pass in those three variables as arguments.
+
+function add(num1 = 9, num2 = 1, num3 = 4) {
+console.log(num1 + num2 + num3)
+}
+add()
 
 // Create a function called fightClub() that accepts a name parameter.  If the name:
 // 'Teo' RETURN '1st rule: You do not talk about Fight Club.'
@@ -421,24 +449,62 @@ if (gender === "male") {
 // 'Liv' RETURN '3rd rule: If someone yells "Stop!", goes limp, taps out, the fight is over.'
 // 'Devin' RETURN '4th rule: Only two guys to a fight.'
 // Anything else, RETURN 'No shirts
+function fightClub(name) {
+  fightClub = name
+  if (fightClub === 'Teo') {
+    console.log('1st rule: You do not talk about Fight Club.')
+  } else if (fightClub === 'Manara') {
+    console.log('2nd rule: YOU DO NOT TALK ABOUT FIGHT CLUB.')
+  } else if (fightClub === 'Liv') {
+    console.log('3rd rule: If someone yells "Stop!", goes limp, taps out, the fight is over.')
+  } else if (fightClub === 'Devin') {
+    console.log('4th rule: Only two guys to a fight.')
+  } else {
+    console.log('No shirts.')
+  }
+}
+fightClub()
 
 // Create a function called hello() that prints 'Hello'. Return an anonymous function inside hello() and have it print 'Goodbye'. Invoke your hello function in some way to see Hello and Goodbye in the console.
+function hello() {
+  console.log('Hello')
+}
+hello()
 
 // Create a function expression with your first name as the variable and then print your first and last name
+function firstName() {
+  firstName = 'Tia'
+  console.log(firstName + ' Khon')
+}
+firstName()
 
 // Create an arrow function that accepts a number and have it return that number doubled
+const num = 5
+const doubled = numbers.map((number) => {
+return num * 2
+})
+console.log(doubled) 
 
 // =================================================
 //                     OBJECTS
 // =================================================
 
 // Create an object and call it human. Add a name, age, and location property. Give the properties values.
+const human = {
+  name: 'Tia Khon',
+  age: 99,
+  location: 'Boston'
+}
 
 // Access the name using dot notation
+console.log(human.name)
 
 // Access the age using square brackets
+console.log(human['age'])
 
 // Use object destructuring to access location
+const { name, age, location } = human
+console.log(location)
 
 // ACCESS Granted
 const bulbasaur = {
@@ -458,18 +524,24 @@ const bulbasaur = {
 }
 
 // Print overgrow
+console.log(bulbasaur.abilities[0])
 
 // Print cut
+console.log(bulbasaur.moves[2])
 
 // Print Bulbahhhh!!!!!
+console.log('Bulbahhhh!!!!!')
 
 // Add a height of 7 to bulbasaur using the dot notation. (Don't change bulbasaur object manually)
+bulbasaur.height = 7
 
 // Add a property called order and assign it a value of 1 using the square brackets. (Don't change bulbasaur object manually)
+bulbasaur.order = 1
 
 // Print an array that contains every single properties in bulbasaur
+console.log(Object.getOwnPropertyNames(bulbasaur))
 
 // Print every single properties one by one in the console
 
 // Print an array that contains every single values in bulbasaur
-
+console.log(Object.values(bulbasaur))
